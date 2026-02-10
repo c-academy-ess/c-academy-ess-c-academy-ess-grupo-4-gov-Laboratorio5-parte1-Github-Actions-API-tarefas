@@ -55,7 +55,14 @@ public class UserController {
     public void loginUser(Context ctx) throws NoSuchAlgorithmException {
         UserLoginRequest userRequest = ctx.bodyAsClass(UserLoginRequest.class);
         log.info("Login user: {}", userRequest.username);
+
+
         String token = userService.login(userRequest.username, userRequest.password);
+
+
+
+
+
         if (token != null) {
             ctx.status(200).json(token);
         } else {

@@ -4,8 +4,12 @@ package cncs.academy.ess.service;
 import cncs.academy.ess.model.User;
 import cncs.academy.ess.repository.UserRepository;
 import cncs.academy.ess.service.security.PasswordUtils;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.exceptions.JWTCreationException;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 
 import static cncs.academy.ess.service.security.PasswordUtils.hashPassword;
 
@@ -58,7 +62,25 @@ public class TodoUserService {
     }
 
     private String createAuthToken(User user) {
-        return "Bearer " + user.getUsername();
+        //return "Bearer " + user.getUsername();
+
+        try {
+            Algorithm algorithm = Algorithm.HMAC256("segredo");
+
+            return JWT.create()
+                    .withIssuer("apiToDO") // "issuer"
+                    .withClaim("username", user.getUsername()) // Claim customizada
+                    .withIssuedAt(new Date()) // "issuedAt"
+                    .withExpiresAt(new Date(System.currentTimeMillis() + 3600000)) // "expiresAt" (Ex: 1 hora)
+                    .sign(algorithm);
+
+
+        } catch (JWTCreationException exception){
+            // Invalid Signing configuration / Couldn't convert Claims.
+            return null;
+        }
+
+
     }
 }
 
