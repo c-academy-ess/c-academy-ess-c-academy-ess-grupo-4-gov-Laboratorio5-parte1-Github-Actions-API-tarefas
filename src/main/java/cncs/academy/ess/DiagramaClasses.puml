@@ -1,0 +1,205 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+' =========================
+' Camada MODEL (tabelas)
+' =========================
+package "model" {
+  class User {
+    +id: int
+    +username: string
+    +password: string
+  }
+
+  class TodoList {
+    +id: int
+    +name: string
+    +ownerId: int
+  }
+
+  class Todo {
+    +id: int
+    +description: string
+    +completed: bool
+    +listId: int
+  }
+
+  User "1" o-- "0..*" TodoList : owns >
+  TodoList "1" o-- "0..*" Todo : contains >
+}
+
+' =========================
+' DTOs / Messages (requests/responses)
+' =========================
+package "controller.messages" {
+  class ErrorMessage {
+    +message: string
+  }
+
+  class UserAddRequest {
+    +username: string
+    +password: string
+  }
+
+  class UserLoginRequest {
+    +username: string
+    +password: string
+  }
+
+  class UserResponse {
+    +id: int
+    +username: string
+  }
+
+  class TodoListAddRequest {
+    +listName: string
+  }
+
+  class TodoListAddResponse {
+    +listId: int
+    +name: string
+    +ownerId: int
+  }
+
+  class TodoListGetResponse {
+    +listId: int
+    +name: string
+    +ownerId: int
+  }
+
+  class TodoAddRequest {
+    +listId: int
+    +description: string
+  }
+}
+
+' =========================
+' Repositórios (interfaces)
+' =========================
+package "repository" {
+  interface UserRepository {
+    +findById(userId: int): User
+    +findAll(): List<User>
+    +save(user: User): int
+    +deleteById(userId: int): void
+    +findByUsername(username: string): User
+  }
+
+  interface TodoListsRepository {
+    +findById(listId: int): TodoList
+    +findAll(): List<TodoList>
+    +findAllByUserId(userId: int): List<TodoList>
+    +save(todoList: TodoList): int
+    +update(todoList: TodoList): void
+    +deleteById(listId: int): bool
+  }
+
+  interface TodoRepository {
+    +findById(todoId: int): Todo
+    +findAll(): List<Todo>
+    +findAllByListId(listId: int): List<Todo>
+    +save(todo: Todo): int
+    +update(todo: Todo): void
+    +deleteById(todoId: int): bool
+  }
+}
+
+' =========================
+' Serviços
+' =========================
+package "service" {
+  class TodoUserService {
+    +addUser(username: string, password: string): User
+    +getUser(id: int): User
+    +deleteUser(id: int): void
+    +login(username: string, password: string): string
+  }
+
+  class TodoListsService {
+    +createTodoListItem(listName: string, ownerId: int): TodoList
+    +getTodoList(listId: int): TodoList
+    +getAllTodoLists(userId: int): List<TodoList>
+  }
+
+  class TodoService {
+    +createTodoItem(description: string, listId: int): Todo
+    +getTodoItem(todoId: int): Todo
+    +getAllTodoItemsByListId(listId: int): List<Todo>
+    +deleteTodoItem(todoId: int): bool
+  }
+
+  class DuplicateUserException
+}
+
+' Dependências services -> repos
+TodoUserService --> UserRepository
+TodoListsService --> TodoListsRepository
+TodoService --> TodoRepository
+TodoService --> TodoListsRepository
+
+TodoUserService ..> DuplicateUserException : throws
+
+' =========================
+' Controllers + Middleware
+' =========================
+package "controller" {
+  class AuthorizationMiddleware {
+    +handle(ctx: Context): void
+  }
+
+  class UserController {
+    +createUser(ctx: Context): void
+    +getUser(ctx: Context): void
+    +deleteUser(ctx: Context): void
+    +loginUser(ctx: Context): void
+  }
+
+  class TodoListController {
+    +createTodoList(ctx: Context): void
+    +getTodoList(ctx: Context): void
+    +getAllTodoLists(ctx: Context): void
+  }
+
+  class TodoController {
+    +createTodoItem(ctx: Context): void
+    +getTodoItem(ctx: Context): void
+    +getAllTodoItems(ctx: Context): void
+    +deleteTodoItem(ctx: Context): void
+  }
+}
+
+' Controllers -> Services
+UserController --> TodoUserService
+TodoListController --> TodoListsService
+TodoController --> TodoService
+TodoController --> TodoListsService
+
+AuthorizationMiddleware --> UserRepository
+
+' =========================
+' Notas (mapeamento SQL)
+' =========================
+note right of User
+Table: users
+- id SERIAL PK
+- username UNIQUE NOT NULL
+- password NOT NULL
+end note
+
+note right of TodoList
+Table: lists
+- id SERIAL PK
+- name NOT NULL
+- owner_id FK -> users.id
+end note
+
+note right of Todo
+Table: todos
+- id SERIAL PK
+- description NOT NULL
+- completed BOOLEAN DEFAULT FALSE
+- list_id FK -> lists.id
+end note
+
+@enduml
