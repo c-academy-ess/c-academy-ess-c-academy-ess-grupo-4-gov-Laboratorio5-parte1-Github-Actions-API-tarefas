@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac78e8b7-8e66-40e7-b027-bd11a897a601" name="Changes" comment="Atualização - JWT.create">
+    <list default="true" id="ac78e8b7-8e66-40e7-b027-bd11a897a601" name="Changes" comment="Atualização - JWT.create - atualizacao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/TodoUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/TodoUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/security/PasswordUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/security/PasswordUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +45,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.App.executor": "Run",
+    "Application.App.executor": "Debug",
     "Maven.taskslist-phase1 [compile].executor": "Run",
     "Maven.taskslist-phase1 [package].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -96,7 +100,7 @@
       <option name="presentableId" value="Default" />
       <updated>1770744549348</updated>
       <workItem from="1770744550755" duration="172000" />
-      <workItem from="1770744736145" duration="2384000" />
+      <workItem from="1770744736145" duration="11149000" />
     </task>
     <task id="LOCAL-00001" summary="Atualização - JWT.create">
       <option name="closed" value="true" />
@@ -106,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770745475021</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Atualização - JWT.create - atualizacao">
+      <option name="closed" value="true" />
+      <created>1770802990138</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1770802990138</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +126,38 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Atualização - JWT.create" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualização - JWT.create" />
+    <MESSAGE value="Atualização - JWT.create - atualizacao" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização - JWT.create - atualizacao" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/TodoUserService.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cncs/academy/ess/App.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/TodoUserService.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/TodoUserService.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="passwordHash" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

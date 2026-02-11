@@ -57,9 +57,8 @@ public class UserController {
         log.info("Login user: {}", userRequest.username);
 
 
+
         String token = userService.login(userRequest.username, userRequest.password);
-
-
 
 
 

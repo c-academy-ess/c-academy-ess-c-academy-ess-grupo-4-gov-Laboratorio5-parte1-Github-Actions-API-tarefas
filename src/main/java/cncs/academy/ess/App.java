@@ -14,10 +14,25 @@ import cncs.academy.ess.service.TodoService;
 import io.javalin.Javalin;
 import io.javalin.community.ssl.SslPlugin;
 
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
+import java.security.SecureRandom;
+
 import java.security.NoSuchAlgorithmException;
 
+import static cncs.academy.ess.service.security.PasswordUtils.generateSalt;
+
 public class App {
-    public static void main(String[] args) throws NoSuchAlgorithmException, DuplicateUserException {
+
+/*
+    private static byte[] hashPassword(String password, byte[] salt, int iterations, int keyLength) throws Exception {
+        PBEKeySpec spec = new PBEKeySpec(password.toCharArray(), salt, iterations, keyLength);
+        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
+        return factory.generateSecret(spec).getEncoded();
+    }
+*/
+
+    public static void main(String[] args) throws Exception {
        /* Javalin app = Javalin.create(config -> {
             config.bundledPlugins.enableCors(cors -> {
                 cors.addRule(it -> {
@@ -25,6 +40,11 @@ public class App {
                 });
             });
        }).start(7100);*/
+
+
+/*
+        byte[] hashedPassword = hashPassword("123", generateSalt() , 10, 256);
+*/
 
 
         SslPlugin plugin = new SslPlugin(conf -> {
@@ -103,9 +123,16 @@ public class App {
             TodoUserService userService,
             TodoListsService toDoListService,
             TodoService todoService) throws NoSuchAlgorithmException, DuplicateUserException {
+
+
         userService.addUser("user1", "password1");
+
+
         userService.addUser("user2", "password2");
         userService.addUser("user3", "password3");
+
+        userService.addUser("user69", "password69");
+
         toDoListService.createTodoListItem("Shopping list", 1);
         toDoListService.createTodoListItem("Other", 1);
         toDoListService.createTodoListItem("Shopping list2", 2);
@@ -121,5 +148,6 @@ public class App {
         todoService.createTodoItem("Eggs", 1);
         todoService.createTodoItem("Cheese", 1);
         todoService.createTodoItem("Butter", 1);
+
     }
 }

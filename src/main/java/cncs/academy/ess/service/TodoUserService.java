@@ -9,6 +9,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.Base64;
 import java.util.Date;
 
 import static cncs.academy.ess.service.security.PasswordUtils.hashPassword;
@@ -49,16 +50,45 @@ public class TodoUserService {
     public String login(String username, String password) throws NoSuchAlgorithmException {
         User user = repository.findByUsername(username);
 
-        if (user == null) {
-            return null;
+        try{
+            if (user == null) {
+                return null;
+            }
+
+
+
+            String [] parts = user.getPassword().split(":");
+            String salt = parts[1];
+
+            byte [] saltBase64 = Base64.getDecoder().decode(salt);
+
+            String passwordHashAtual = hashPassword(password, saltBase64);
+
+            //String passwordHash = hashPassword(password);
+
+
+
+            if (user.getPassword().equals(passwordHashAtual)) {
+                return createAuthToken(user);
+            }
+
+        }
+        catch (Exception ex){
+
+            return ex.getMessage();
         }
 
-        String passwordHash = hashPassword(password);
-
-        if (user.getPassword().equals(passwordHash)) {
-            return createAuthToken(user);
-        }
         return null;
+    }
+
+    private static byte[] hexToBytes(String hexString) {
+        int len = hexString.length();
+        byte[] bytes = new byte[len / 2];
+        for (int i = 0; i < len; i += 2) {
+            bytes[i / 2] = (byte) ((Character.digit(hexString.charAt(i), 16) << 4)
+                    + Character.digit(hexString.charAt(i + 1), 16));
+        }
+        return bytes;
     }
 
     private String createAuthToken(User user) {
