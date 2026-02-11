@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac78e8b7-8e66-40e7-b027-bd11a897a601" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/TodoUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/TodoUserService.java" afterDir="false" />
+    <list default="true" id="ac78e8b7-8e66-40e7-b027-bd11a897a601" name="Changes" comment="Atualização - JWT.create">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,11 +96,24 @@
       <option name="presentableId" value="Default" />
       <updated>1770744549348</updated>
       <workItem from="1770744550755" duration="172000" />
-      <workItem from="1770744736145" duration="601000" />
+      <workItem from="1770744736145" duration="2384000" />
     </task>
+    <task id="LOCAL-00001" summary="Atualização - JWT.create">
+      <option name="closed" value="true" />
+      <created>1770745475021</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1770745475021</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Atualização - JWT.create" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização - JWT.create" />
   </component>
 </project>
