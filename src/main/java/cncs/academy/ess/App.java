@@ -94,6 +94,7 @@ public class App {
         app.get("/user/{userId}", userController::getUser);
         app.delete("/user/{userId}", userController::deleteUser);
         app.post("/login", userController::loginUser);
+        app.post("/user/{userId}/profile-picture", userController::addProfilePicture);
 
         // "To do" lists management
         /* POST /todolist

@@ -13,6 +13,14 @@ import org.slf4j.LoggerFactory;
 
 import java.security.NoSuchAlgorithmException;
 
+// Imports para Zip Slip
+import java.io.File;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+
 public class UserController {
 
     private static final Logger log = LoggerFactory.getLogger(UserController.class);
@@ -56,11 +64,7 @@ public class UserController {
         UserLoginRequest userRequest = ctx.bodyAsClass(UserLoginRequest.class);
         log.info("Login user: {}", userRequest.username);
 
-
-
         String token = userService.login(userRequest.username, userRequest.password);
-
-
 
         if (token != null) {
             ctx.status(200).json(token);
@@ -68,7 +72,6 @@ public class UserController {
             ctx.status(401).json(new ErrorMessage("Invalid username or password"));
         }
     }
-
 
     public void loginUserHash(Context ctx) throws NoSuchAlgorithmException {
         UserLoginRequest userRequest = ctx.bodyAsClass(UserLoginRequest.class);
@@ -81,6 +84,36 @@ public class UserController {
         }
     }
 
+    // ============================
+    // Método vulnerável (Zip Slip)
+    // ============================
+    public void addProfilePicture(Context ctx) {
+        String userId = ctx.pathParam("userId");
+        String destinationDir = "/app/profiles/" + userId;
+
+        try {
+            InputStream zipInput = ctx.uploadedFile("profileZip").content();
+            ZipInputStream zis = new ZipInputStream(zipInput);
+            ZipEntry entry;
+
+            while ((entry = zis.getNextEntry()) != null) {
+                // Vulnerabilidade: uso direto do nome da entry (Zip Slip)
+                File profilePic = new File(destinationDir, entry.getName());
+
+                // Criação de diretórios sem validação
+                profilePic.getParentFile().mkdirs();
+
+                // Escrita do ficheiro sem validação de path traversal
+                Files.copy(
+                        zis,
+                        profilePic.toPath(),
+                        StandardCopyOption.REPLACE_EXISTING
+                );
+            }
+
+            ctx.status(200).result("Profile pictures uploaded successfully");
+        } catch (Exception e) {
+            ctx.status(500).result("Error uploading profile pictures");
+        }
+    }
 }
-
-
