@@ -52,11 +52,15 @@ public class App {
                     "/Users/utilizador/Desktop/Lab2/cert.pem",
                     "/Users/utilizador/Desktop/Lab2/key.pem",
                     "123456");
+
+            conf.securePort = 7100;
+            //conf.securePort = 7101; // opcional se quiser HTTPS separado
+
             conf.sniHostCheck = false;
         });
 
-        Javalin app = Javalin.create(javalinConfig -> {
-            javalinConfig.registerPlugin(plugin);
+        Javalin app = Javalin.create(config -> {
+            config.registerPlugin(plugin);
         }).start();
 
 

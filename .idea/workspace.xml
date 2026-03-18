@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac78e8b7-8e66-40e7-b027-bd11a897a601" name="Changes" comment="Atualização - JWT.create - atualizacao">
+    <list default="true" id="ac78e8b7-8e66-40e7-b027-bd11a897a601" name="Changes" comment="Atualização - JWT.create - atualizacao - Encode - Decode Salt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/TodoUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/TodoUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/security/PasswordUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/service/security/PasswordUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +22,12 @@
     &quot;assignee&quot;: &quot;paulorfnobrega&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/c-academy-ess/api-todo-list-manager-grupo-4-gov-Laboratorio2_Parte1.git&quot;,
-    &quot;accountId&quot;: &quot;5e305273-0665-47c3-ad1c-4f1ff3e13b70&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/c-academy-ess/c-academy-ess-c-academy-ess-grupo-4-gov-Laboratorio5-parte1-Github-Actions-API-tarefas.git",
+    "accountId": "5e305273-0665-47c3-ad1c-4f1ff3e13b70"
   }
-}</component>
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -43,27 +40,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.App.executor": "Debug",
-    "Maven.taskslist-phase1 [compile].executor": "Run",
-    "Maven.taskslist-phase1 [package].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/utilizador/Desktop/Lab2/api-todo-list-manager-grupo-4-gov-Laboratorio2_Parte1",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.taskslist-phase1 [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.taskslist-phase1 [package].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/utilizador/Desktop/Lab5/parte2/api-todo-list-manager-grupo-4-gov-Laboratorio5_Parte1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cncs.academy.ess.App" />
@@ -88,7 +88,6 @@
     <attachedChunks>
       <set>
         <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
       </set>
     </attachedChunks>
   </component>
@@ -100,7 +99,8 @@
       <option name="presentableId" value="Default" />
       <updated>1770744549348</updated>
       <workItem from="1770744550755" duration="172000" />
-      <workItem from="1770744736145" duration="11149000" />
+      <workItem from="1770744736145" duration="11737000" />
+      <workItem from="1770812350378" duration="64000" />
     </task>
     <task id="LOCAL-00001" summary="Atualização - JWT.create">
       <option name="closed" value="true" />
@@ -118,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770802990138</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Atualização - JWT.create - atualizacao - Encode - Decode Salt">
+      <option name="closed" value="true" />
+      <created>1770811868906</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1770811868906</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,7 +135,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Atualização - JWT.create" />
     <MESSAGE value="Atualização - JWT.create - atualizacao" />
-    <option name="LAST_COMMIT_MESSAGE" value="Atualização - JWT.create - atualizacao" />
+    <MESSAGE value="Atualização - JWT.create - atualizacao - Encode - Decode Salt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização - JWT.create - atualizacao - Encode - Decode Salt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
