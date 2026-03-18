@@ -1,0 +1,17 @@
+name: Hello world
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  hello-world-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out the repository
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runner shell
+      - name: Run a one-line script
+        run: echo "Hello, world!"
