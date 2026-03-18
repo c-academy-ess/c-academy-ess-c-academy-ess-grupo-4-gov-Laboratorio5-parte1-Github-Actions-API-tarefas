@@ -96,6 +96,7 @@ public class App {
         app.post("/login", userController::loginUser);
         app.post("/user/{userId}/profile-picture", userController::addProfilePicture);
 
+        //Atualização do "To do"
         // "To do" lists management
         /* POST /todolist
           {

@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac78e8b7-8e66-40e7-b027-bd11a897a601" name="Changes" comment="c-academy-ess-c-academy-ess-grupo-4-gov-Laboratorio5-parte1-Github-Actions-API-tarefas">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ac78e8b7-8e66-40e7-b027-bd11a897a601" name="Changes" comment="c-academy-ess-c-academy-ess-grupo-4-gov-Laboratorio5-parte1-Github-Actions-API-tarefas - vulnerabilidade">
       <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773831384817</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="c-academy-ess-c-academy-ess-grupo-4-gov-Laboratorio5-parte1-Github-Actions-API-tarefas - vulnerabilidade">
+      <option name="closed" value="true" />
+      <created>1773835345829</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773835345829</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +152,8 @@
     <MESSAGE value="Atualização - JWT.create - atualizacao" />
     <MESSAGE value="Atualização - JWT.create - atualizacao - Encode - Decode Salt" />
     <MESSAGE value="c-academy-ess-c-academy-ess-grupo-4-gov-Laboratorio5-parte1-Github-Actions-API-tarefas" />
-    <option name="LAST_COMMIT_MESSAGE" value="c-academy-ess-c-academy-ess-grupo-4-gov-Laboratorio5-parte1-Github-Actions-API-tarefas" />
+    <MESSAGE value="c-academy-ess-c-academy-ess-grupo-4-gov-Laboratorio5-parte1-Github-Actions-API-tarefas - vulnerabilidade" />
+    <option name="LAST_COMMIT_MESSAGE" value="c-academy-ess-c-academy-ess-grupo-4-gov-Laboratorio5-parte1-Github-Actions-API-tarefas - vulnerabilidade" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
