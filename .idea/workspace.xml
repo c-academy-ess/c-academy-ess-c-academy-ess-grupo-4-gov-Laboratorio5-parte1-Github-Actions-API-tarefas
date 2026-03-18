@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac78e8b7-8e66-40e7-b027-bd11a897a601" name="Changes" comment="c-academy-ess-c-academy-ess-grupo-4-gov-Laboratorio5-parte1-Github-Actions-API-tarefas - vulnerabilidade">
-      <change beforePath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cncs/academy/ess/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/codeql-analysis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/codeql-analysis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
